@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>EasyA</title>
+    <link rel="stylesheet" href="css/50.css">
+
+    <script type="text/javascript">
+        $(function () {
+            $('#password').focus(function () {
+                // 密码框获得焦点，追加样式.password
+                $('#owl').addClass('password');
+            }).blur(function () {
+                // 密码框失去焦点，移除样式.password
+                $('#owl').removeClass('password');
+            })
+        })
+    </script>
+    <style>
+        .login-name{
+            color: #fff;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="owl" id="owl">
+            <div class="hand"></div>
+            <div class="hand hand-r"></div>
+            <div class="arms">
+                <div class="arm"></div>
+                <div class="arm arm-r"></div>
+            </div>
+        </div>
+        <form action="./index1.html">
+            <h1 class="login-name">Login </h1>
+            <div class="input-box">
+                <input id="uname" type="text" placeholder="用户名">
+                <input id="pwd" type="password" placeholder="密码">
+                <button id="but" onclick="return checkuser()">登录</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    function getValue(id) {
+        return document.getElementById(id).value;
+        // 查找元素
+    }
+    function checkuser() {
+        if (getValue('uname') == "gy" && getValue('pwd') == "123") {
+            
+
+            return true;
+        } else {
+            alert("登录名或密码错误！")
+            // 警告框
+            return false;
+        }
+    } 
+</script>
+
+</html>
